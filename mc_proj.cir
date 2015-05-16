@@ -1,0 +1,346 @@
+Look Ahead Carry Adder
+
+
+v1 vdd 0 dc 5 ac 0
+rgnd gnd 0 1e-6
+
+vpulse2 a0 gnd pulse(0 5 0ns 5ns 5ns 30ns 100ns)
+vpulse3 a1 gnd pulse(0 5 50ns 5ns 5ns 30ns 100ns)
+vpulse4 a2 gnd pulse(0 0 10ns 5ns 5ns 30ns 100ns)
+vpulse5 a3 gnd pulse(0 5 20ns 5ns 5ns 60ns 100ns)
+vpulse6 a4 gnd pulse(0 0 10ns 5ns 5ns 30ns 100ns)
+vpulse7 a5 gnd pulse(0 5 50ns 5ns 5ns 30ns 100ns)
+vpulse8 a6 gnd pulse(0 0 10ns 5ns 5ns 30ns 100ns)
+vpulse9 a7 gnd pulse(0 5 50ns 5ns 5ns 30ns 100ns)
+
+vpulse10 b0 gnd pulse(0 5 0ns 5ns 5ns 30ns 100ns)
+vpulse11 b1 gnd pulse(0 0 10ns 5ns 5ns 30ns 100ns)
+vpulse12 b2 gnd pulse(0 0 10ns 5ns 5ns 30ns 100ns)
+vpulse13 b3 gnd pulse(0 0 10ns 5ns 5ns 30ns 100ns)
+vpulse14 b4 gnd pulse(0 5 50ns 5ns 5ns 30ns 100ns)
+vpulse15 b5 gnd pulse(0 5 50ns 5ns 5ns 30ns 100ns)
+vpulse16 b6 gnd pulse(0 0 10ns 5ns 5ns 30ns 100ns)
+vpulse17 b7 gnd pulse(0 5 50ns 5ns 5ns 30ns 100ns)
+
+
+
+m144  28 a0 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m145  28 b0 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m147  30 a0 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m146  32 28 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m149  30 28 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m148  32 b0 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m150  34 30 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m151  34 32 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m152  36 34 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m153  36 gnd vdd vdd  ami06P w=1.5e-06 l=6e-07
+m156  38 34 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m155  40 36 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m154  42 36 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m159  38 36 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m158  40 gnd vdd vdd  ami06P w=1.5e-06 l=6e-07
+m157  42 28 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m160  s0 38 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m161  s0 40 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m162  45 a1 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m163  45 b1 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m165  47 a1 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m164  49 45 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m167  47 45 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m166  49 b1 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m168  51 47 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m169  51 49 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m170  53 51 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m171  53 42 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m172  55 51 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m174  57 53 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m173  59 53 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m177  55 53 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m176  57 42 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m175  59 45 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m178  s1 55 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m179  s1 57 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m180  62 a2 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m181  62 b2 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m183  64 a2 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m182  66 62 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m185  64 62 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m184  66 b2 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m186  68 64 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m187  68 66 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m188  70 68 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m189  70 59 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m192  72 68 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m191  74 70 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m190  76 70 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m194  72 70 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m193  74 59 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m195  76 62 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m196  s2 72 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m197  s2 74 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m198  79 a3 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m199  79 b3 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m201  81 a3 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m200  83 79 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m203  81 79 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m202  83 b3 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m204  85 81 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m205  85 83 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m206  87 85 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m207  87 76 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m210  89 85 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m209  91 87 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m208  93 87 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m213  89 87 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m212  91 76 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m211  93 79 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m214  s3 89 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m215  s3 91 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m216  96 a4 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m217  96 b4 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m219  98 a4 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m218  100 96 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m221  98 96 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m220  100 b4 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m222  102 98 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m223  102 100 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m224  104 102 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m225  104 93 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m227  106 102 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m226  108 104 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m228  110 104 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m231  106 104 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m230  108 93 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m229  110 96 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m232  s4 106 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m233  s4 108 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m234  113 a5 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m235  113 b5 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m237  115 a5 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m236  117 113 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m238  115 113 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m239  117 b5 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m240  119 115 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m241  119 117 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m242  121 119 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m243  121 110 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m246  123 119 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m245  125 121 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m244  127 121 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m249  123 121 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m248  125 110 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m247  127 113 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m250  s5 123 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m251  s5 125 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m252  130 a6 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m253  130 b6 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m255  132 a6 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m254  134 130 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m257  132 130 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m256  134 b6 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m258  136 132 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m259  136 134 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m260  138 136 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m261  138 127 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m264  140 136 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m263  142 138 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m262  144 138 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m267  140 138 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m266  142 127 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m265  144 130 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m268  s6 140 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m269  s6 142 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m270  147 a7 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m271  147 b7 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m273  149 a7 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m272  151 147 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m275  149 147 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m274  151 b7 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m276  153 149 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m277  153 151 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m278  155 153 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m279  155 144 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m282  157 153 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m281  159 155 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m280  cout 155 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m285  157 155 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m284  159 144 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m283  cout 147 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m286  s7 157 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m287  s7 159 vdd vdd  ami06P w=1.5e-06 l=6e-07
+m1  29 a0 28 gnd  ami06N w=1.5e-06 l=6e-07
+m0  gnd b0 29 gnd  ami06N w=1.5e-06 l=6e-07
+m5  31 a0 30 gnd  ami06N w=1.5e-06 l=6e-07
+m4  gnd 28 31 gnd  ami06N w=1.5e-06 l=6e-07
+m3  33 28 32 gnd  ami06N w=1.5e-06 l=6e-07
+m2  gnd b0 33 gnd  ami06N w=1.5e-06 l=6e-07
+m7  35 30 34 gnd  ami06N w=1.5e-06 l=6e-07
+m6  gnd 32 35 gnd  ami06N w=1.5e-06 l=6e-07
+m9  37 34 36 gnd  ami06N w=1.5e-06 l=6e-07
+m8  gnd gnd 37 gnd  ami06N w=1.5e-06 l=6e-07
+m15  39 34 38 gnd  ami06N w=1.5e-06 l=6e-07
+m14  gnd 36 39 gnd  ami06N w=1.5e-06 l=6e-07
+m13  41 36 40 gnd  ami06N w=1.5e-06 l=6e-07
+m12  gnd gnd 41 gnd  ami06N w=1.5e-06 l=6e-07
+m11  43 36 42 gnd  ami06N w=1.5e-06 l=6e-07
+m10  gnd 28 43 gnd  ami06N w=1.5e-06 l=6e-07
+m16  44 38 s0 gnd  ami06N w=1.5e-06 l=6e-07
+m17  gnd 40 44 gnd  ami06N w=1.5e-06 l=6e-07
+m19  46 a1 45 gnd  ami06N w=1.5e-06 l=6e-07
+m18  gnd b1 46 gnd  ami06N w=1.5e-06 l=6e-07
+m23  48 a1 47 gnd  ami06N w=1.5e-06 l=6e-07
+m22  gnd 45 48 gnd  ami06N w=1.5e-06 l=6e-07
+m21  50 45 49 gnd  ami06N w=1.5e-06 l=6e-07
+m20  gnd b1 50 gnd  ami06N w=1.5e-06 l=6e-07
+m25  52 47 51 gnd  ami06N w=1.5e-06 l=6e-07
+m24  gnd 49 52 gnd  ami06N w=1.5e-06 l=6e-07
+m27  54 51 53 gnd  ami06N w=1.5e-06 l=6e-07
+m26  gnd 42 54 gnd  ami06N w=1.5e-06 l=6e-07
+m33  56 51 55 gnd  ami06N w=1.5e-06 l=6e-07
+m32  gnd 53 56 gnd  ami06N w=1.5e-06 l=6e-07
+m31  58 53 57 gnd  ami06N w=1.5e-06 l=6e-07
+m30  gnd 42 58 gnd  ami06N w=1.5e-06 l=6e-07
+m29  60 53 59 gnd  ami06N w=1.5e-06 l=6e-07
+m28  gnd 45 60 gnd  ami06N w=1.5e-06 l=6e-07
+m35  61 55 s1 gnd  ami06N w=1.5e-06 l=6e-07
+m34  gnd 57 61 gnd  ami06N w=1.5e-06 l=6e-07
+m37  63 a2 62 gnd  ami06N w=1.5e-06 l=6e-07
+m36  gnd b2 63 gnd  ami06N w=1.5e-06 l=6e-07
+m38  65 a2 64 gnd  ami06N w=1.5e-06 l=6e-07
+m41  gnd 62 65 gnd  ami06N w=1.5e-06 l=6e-07
+m40  67 62 66 gnd  ami06N w=1.5e-06 l=6e-07
+m39  gnd b2 67 gnd  ami06N w=1.5e-06 l=6e-07
+m43  69 64 68 gnd  ami06N w=1.5e-06 l=6e-07
+m42  gnd 66 69 gnd  ami06N w=1.5e-06 l=6e-07
+m45  71 68 70 gnd  ami06N w=1.5e-06 l=6e-07
+m44  gnd 59 71 gnd  ami06N w=1.5e-06 l=6e-07
+m49  73 68 72 gnd  ami06N w=1.5e-06 l=6e-07
+m48  gnd 70 73 gnd  ami06N w=1.5e-06 l=6e-07
+m47  75 70 74 gnd  ami06N w=1.5e-06 l=6e-07
+m46  gnd 59 75 gnd  ami06N w=1.5e-06 l=6e-07
+m51  77 70 76 gnd  ami06N w=1.5e-06 l=6e-07
+m50  gnd 62 77 gnd  ami06N w=1.5e-06 l=6e-07
+m53  78 72 s2 gnd  ami06N w=1.5e-06 l=6e-07
+m52  gnd 74 78 gnd  ami06N w=1.5e-06 l=6e-07
+m55  80 a3 79 gnd  ami06N w=1.5e-06 l=6e-07
+m54  gnd b3 80 gnd  ami06N w=1.5e-06 l=6e-07
+m59  82 a3 81 gnd  ami06N w=1.5e-06 l=6e-07
+m58  gnd 79 82 gnd  ami06N w=1.5e-06 l=6e-07
+m57  84 79 83 gnd  ami06N w=1.5e-06 l=6e-07
+m56  gnd b3 84 gnd  ami06N w=1.5e-06 l=6e-07
+m60  86 81 85 gnd  ami06N w=1.5e-06 l=6e-07
+m61  gnd 83 86 gnd  ami06N w=1.5e-06 l=6e-07
+m63  88 85 87 gnd  ami06N w=1.5e-06 l=6e-07
+m62  gnd 76 88 gnd  ami06N w=1.5e-06 l=6e-07
+m69  90 85 89 gnd  ami06N w=1.5e-06 l=6e-07
+m68  gnd 87 90 gnd  ami06N w=1.5e-06 l=6e-07
+m67  92 87 91 gnd  ami06N w=1.5e-06 l=6e-07
+m66  gnd 76 92 gnd  ami06N w=1.5e-06 l=6e-07
+m65  94 87 93 gnd  ami06N w=1.5e-06 l=6e-07
+m64  gnd 79 94 gnd  ami06N w=1.5e-06 l=6e-07
+m71  95 89 s3 gnd  ami06N w=1.5e-06 l=6e-07
+m70  gnd 91 95 gnd  ami06N w=1.5e-06 l=6e-07
+m73  97 a4 96 gnd  ami06N w=1.5e-06 l=6e-07
+m72  gnd b4 97 gnd  ami06N w=1.5e-06 l=6e-07
+m77  99 a4 98 gnd  ami06N w=1.5e-06 l=6e-07
+m76  gnd 96 99 gnd  ami06N w=1.5e-06 l=6e-07
+m75  101 96 100 gnd  ami06N w=1.5e-06 l=6e-07
+m74  gnd b4 101 gnd  ami06N w=1.5e-06 l=6e-07
+m79  103 98 102 gnd  ami06N w=1.5e-06 l=6e-07
+m78  gnd 100 103 gnd  ami06N w=1.5e-06 l=6e-07
+m81  105 102 104 gnd  ami06N w=1.5e-06 l=6e-07
+m80  gnd 93 105 gnd  ami06N w=1.5e-06 l=6e-07
+m82  107 102 106 gnd  ami06N w=1.5e-06 l=6e-07
+m87  gnd 104 107 gnd  ami06N w=1.5e-06 l=6e-07
+m86  109 104 108 gnd  ami06N w=1.5e-06 l=6e-07
+m85  gnd 93 109 gnd  ami06N w=1.5e-06 l=6e-07
+m84  111 104 110 gnd  ami06N w=1.5e-06 l=6e-07
+m83  gnd 96 111 gnd  ami06N w=1.5e-06 l=6e-07
+m89  112 106 s4 gnd  ami06N w=1.5e-06 l=6e-07
+m88  gnd 108 112 gnd  ami06N w=1.5e-06 l=6e-07
+m91  114 a5 113 gnd  ami06N w=1.5e-06 l=6e-07
+m90  gnd b5 114 gnd  ami06N w=1.5e-06 l=6e-07
+m93  116 a5 115 gnd  ami06N w=1.5e-06 l=6e-07
+m92  gnd 113 116 gnd  ami06N w=1.5e-06 l=6e-07
+m95  118 113 117 gnd  ami06N w=1.5e-06 l=6e-07
+m94  gnd b5 118 gnd  ami06N w=1.5e-06 l=6e-07
+m97  120 115 119 gnd  ami06N w=1.5e-06 l=6e-07
+m96  gnd 117 120 gnd  ami06N w=1.5e-06 l=6e-07
+m99  122 119 121 gnd  ami06N w=1.5e-06 l=6e-07
+m98  gnd 110 122 gnd  ami06N w=1.5e-06 l=6e-07
+m104  124 119 123 gnd  ami06N w=1.5e-06 l=6e-07
+m103  gnd 121 124 gnd  ami06N w=1.5e-06 l=6e-07
+m102  126 121 125 gnd  ami06N w=1.5e-06 l=6e-07
+m101  gnd 110 126 gnd  ami06N w=1.5e-06 l=6e-07
+m100  128 121 127 gnd  ami06N w=1.5e-06 l=6e-07
+m105  gnd 113 128 gnd  ami06N w=1.5e-06 l=6e-07
+m107  129 123 s5 gnd  ami06N w=1.5e-06 l=6e-07
+m106  gnd 125 129 gnd  ami06N w=1.5e-06 l=6e-07
+m109  131 a6 130 gnd  ami06N w=1.5e-06 l=6e-07
+m108  gnd b6 131 gnd  ami06N w=1.5e-06 l=6e-07
+m113  133 a6 132 gnd  ami06N w=1.5e-06 l=6e-07
+m112  gnd 130 133 gnd  ami06N w=1.5e-06 l=6e-07
+m111  135 130 134 gnd  ami06N w=1.5e-06 l=6e-07
+m110  gnd b6 135 gnd  ami06N w=1.5e-06 l=6e-07
+m115  137 132 136 gnd  ami06N w=1.5e-06 l=6e-07
+m114  gnd 134 137 gnd  ami06N w=1.5e-06 l=6e-07
+m117  139 136 138 gnd  ami06N w=1.5e-06 l=6e-07
+m116  gnd 127 139 gnd  ami06N w=1.5e-06 l=6e-07
+m123  141 136 140 gnd  ami06N w=1.5e-06 l=6e-07
+m122  gnd 138 141 gnd  ami06N w=1.5e-06 l=6e-07
+m121  143 138 142 gnd  ami06N w=1.5e-06 l=6e-07
+m120  gnd 127 143 gnd  ami06N w=1.5e-06 l=6e-07
+m119  145 138 144 gnd  ami06N w=1.5e-06 l=6e-07
+m118  gnd 130 145 gnd  ami06N w=1.5e-06 l=6e-07
+m125  146 140 s6 gnd  ami06N w=1.5e-06 l=6e-07
+m124  gnd 142 146 gnd  ami06N w=1.5e-06 l=6e-07
+m126  148 a7 147 gnd  ami06N w=1.5e-06 l=6e-07
+m127  gnd b7 148 gnd  ami06N w=1.5e-06 l=6e-07
+m131  150 a7 149 gnd  ami06N w=1.5e-06 l=6e-07
+m130  gnd 147 150 gnd  ami06N w=1.5e-06 l=6e-07
+m129  152 147 151 gnd  ami06N w=1.5e-06 l=6e-07
+m128  gnd b7 152 gnd  ami06N w=1.5e-06 l=6e-07
+m133  154 149 153 gnd  ami06N w=1.5e-06 l=6e-07
+m132  gnd 151 154 gnd  ami06N w=1.5e-06 l=6e-07
+m135  156 153 155 gnd  ami06N w=1.5e-06 l=6e-07
+m134  gnd 144 156 gnd  ami06N w=1.5e-06 l=6e-07
+m137  158 153 157 gnd  ami06N w=1.5e-06 l=6e-07
+m136  gnd 155 158 gnd  ami06N w=1.5e-06 l=6e-07
+m141  160 155 159 gnd  ami06N w=1.5e-06 l=6e-07
+m140  gnd 144 160 gnd  ami06N w=1.5e-06 l=6e-07
+m139  161 155 cout gnd  ami06N w=1.5e-06 l=6e-07
+m138  gnd 147 161 gnd  ami06N w=1.5e-06 l=6e-07
+m143  162 157 s7 gnd  ami06N w=1.5e-06 l=6e-07
+m142  gnd 159 162 gnd  ami06N w=1.5e-06 l=6e-07
+
+
+.tran 1ns 100n
+.model ami06N nmos(vto=0.6 kp=110e-6 cgdo=1e-12 cgso=1e-12 cgbo=1e-12)
+.model ami06P pmos(vto=-1.0 kp=50e-6 cgdo=1e-12 cgso=1e-12 cgbo=1e-12)
+.print dc v(s0)
+.print dc v(s1)
+.print dc v(s2)
+.print dc v(s3)
+.print dc v(s4)
+.print dc v(s5)
+.print dc v(s6)
+.print dc v(s7)
+.print dc v(cout)
+.print dc v(a0)
+.print dc v(a1)
+.print dc v(a2)
+.print dc v(a3)
+.print dc v(a4)
+.print dc v(a5)
+.print dc v(a6)
+.print dc v(a7)
+.print dc v(b0)
+.print dc v(b1)
+.print dc v(b2)
+.print dc v(b3)
+.print dc v(b4)
+.print dc v(b5)
+.print dc v(b6)
+.print dc v(b7)
+.end
+

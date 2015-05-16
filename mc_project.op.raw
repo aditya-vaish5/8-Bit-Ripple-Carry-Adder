@@ -1,0 +1,15 @@
+Title: Look Ahead Carry Adder
+Date: Thu Apr 17 23:12:36 2014
+Plotname: Operating Point
+Flags: real
+No. Variables: 4
+No. Points:            1
+Offset:   0.0000000000000000e+000
+Command: Linear Technology Corporation LTspice IV
+Variables:
+	0	V(s0)	voltage
+	1	V(s1)	voltage
+	2	V(s2)	voltage
+	3	V(s3)	voltage
+Binary:
+‰‘~ÛúÃa>×3×3×3
